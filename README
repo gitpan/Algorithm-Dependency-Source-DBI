@@ -1,0 +1,34 @@
+NAME
+    Algorithm::Dependency::Source::DBI - Database source for
+    Algorithm::Dependency
+
+SYNOPSIS
+      The author is an idiot
+
+DESCRIPTION
+    The author is lame
+
+METHODS
+SUPPORT
+    To file a bug against this module, use the CPAN bug tracking system
+
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Algorithm-Dependency-Sou
+    rce-DBI>
+
+    For other comments, contact the author.
+
+AUTHOR
+    Adam Kennedy <cpan@ali.as>
+
+SEE ALSO
+    Algorithm::Dependency, <http://ali.as/>
+
+COPYRIGHT
+    Copyright 2007 Adam Kennedy.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
+    The full text of the license can be found in the LICENSE file included
+    with this module.
+
