@@ -16,7 +16,8 @@ README
 t/01_compile.t
 t/02_selftest.t
 t/03_simple.t
-t/99_author.t
+t/98_pod.t
+t/99_pmv.t
 t/data/selftest/create.sql
 t/data/selftest/one.csv
 t/data/simple/create.sql
