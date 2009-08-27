@@ -6,30 +6,30 @@ SYNOPSIS
       use DBI;
       use Algorithm::Dependency;
       use Algorithm::Dependency::Source::DBI;
-  
-      # Load the data from a database
+      
+  # Load the data from a database
       my $data_source = Algorithm::Dependency::Source::DBI->new(
           dbh            => DBI->connect('dbi:SQLite:sqlite.db'),
           select_ids     => 'select name from stuff',
           select_depends => 'select from, to from m2m_deps',
       );
-  
-      # Create the dependency object, and indicate the items that are already
+      
+  # Create the dependency object, and indicate the items that are already
       # selected/installed/etc in the database
       my $dep = Algorithm::Dependency->new(
           source   => $data_source,
           selected => [ 'This', 'That' ]
-          ) or die 'Failed to set up dependency algorithm';
-  
-      # For the item 'Foo', find out the other things we also have to select.
+      ) or die 'Failed to set up dependency algorithm';
+      
+  # For the item 'Foo', find out the other things we also have to select.
       # This WON'T include the item we selected, 'Foo'.
       my $also = $dep->depends( 'Foo' );
       print $also
             ? "By selecting 'Foo', you are also selecting the following items: "
                     . join( ', ', @$also )
             : "Nothing else to select for 'Foo'";
-  
-      # Find out the order we need to act on the items in.
+      
+  # Find out the order we need to act on the items in.
       # This WILL include the item we selected, 'Foo'.
       my $schedule = $dep->schedule( 'Foo' );
 
@@ -51,8 +51,8 @@ METHODS
           select_ids     => 'select name from stuff',
           select_depends => 'select from, to from m2m_deps',
       );
-  
-      my $complex = Algorithm::Dependency::Source::DBI->new(
+      
+  my $complex = Algorithm::Dependency::Source::DBI->new(
           dbh            => $dbi_db_handle,
           select_ids     => [ 'select name from stuff where foo = ?',         'bar' ],
           select_depends => [ 'select from, to from m2m_deps where from = ?', 'bar' ],
@@ -103,13 +103,13 @@ SUPPORT
     For other comments, contact the author.
 
 AUTHOR
-    Adam Kennedy <cpan@ali.as>
+    Adam Kennedy <adamk@cpan.org>
 
 SEE ALSO
     Algorithm::Dependency, <http://ali.as/>
 
 COPYRIGHT
-    Copyright 2007 Adam Kennedy.
+    Copyright 2007 - 2009 Adam Kennedy.
 
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
